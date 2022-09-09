@@ -260,4 +260,4 @@ def processAPI():
     return jsonify({'images':b64images,'info':oinfo})
 
 if cmd_opts.share: run_with_ngrok(app)
-app.run()
+app.run(host='0.0.0.0')
