@@ -31,7 +31,7 @@ goto :launch
 :skip_venv
 
 :launch
-%PYTHON% launch_api.py
+%PYTHON% %~dp0\launch_api.py
 pause
 exit /b
 
