@@ -35,6 +35,7 @@ import base64
 from modules.sd_samplers import samplers, samplers_for_img2img,samplers_k_diffusion
 import gdiffusion
 import PIL
+from modules.realesrgan_model import RealesrganModelInfo
 
 def api(): 
     shared.sd_upscalers = [
