@@ -37,11 +37,23 @@ import gdiffusion
 import PIL
 
 def api(): 
-    shared.sd_upscalers = {
-        "RealESRGAN": lambda img: realesrgan.upscale_with_realesrgan(img, 2, 0),
-        "Lanczos": lambda img: img.resize((img.width*2, img.height*2), resample=images.LANCZOS),
-        "None": lambda img: img
-    }
+    shared.sd_upscalers = [
+        RealesrganModelInfo(
+            name="RealESRGAN",
+            location="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
+            netscale=4, model=lambda img: realesrgan.upscale_with_realesrgan(img, 2, 0)
+        ),
+        RealesrganModelInfo(
+            name="Lanczos",
+            location="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth",
+            netscale=4, model=lambda img: img.resize((img.width*2, img.height*2), resample=images.LANCZOS)
+        ),
+        RealesrganModelInfo(
+            name="None",
+            location="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth",
+            netscale=2, model=lambda img: img
+        ),
+    ]
     #esrgan.load_models(cmd_opts.esrgan_models_path)
     realesrgan.setup_realesrgan()
     gfpgan.setup_gfpgan()
