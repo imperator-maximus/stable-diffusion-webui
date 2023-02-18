@@ -1,3 +1,7 @@
+This is not in use anymore. It was made because A1111 refused to make an API in his popular SD implementation.
+In the meantime he changed his mind and so I switched over official A1111.
+
+--------------------------------------------------------------------------------------------------
 # Stable Diffusion API
 A headless server with REST API for Stable Diffusion and for Krita or Photoshop Plugins.
 
