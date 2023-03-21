@@ -11,7 +11,7 @@ numpy
 omegaconf
 piexif
 Pillow
-pytorch_lightning
+pytorch_lightning==1.7.7
 realesrgan
 scikit-image>=0.19
 git+https://github.com/TencentARC/GFPGAN.git@8d2447a2d918f8eba5a4a01463fd48e45126a379
